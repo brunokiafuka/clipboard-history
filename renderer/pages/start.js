@@ -16,8 +16,8 @@ const App = () =>  {
   useEffect(() => {
     // start listening the channel message
     // global.ipcRenderer.send('message', 'fuckkkkkk')
-    global.ipcRenderer.on('message', handleMessage);
-    return () => global.ipcRenderer.removeListener('message', handleMessage);
+    global.ipcRenderer.on('read-from-clipboard', handleMessage);
+    return () => global.ipcRenderer.removeListener('read-from-clipboard', handleMessage);
   }, [handleMessage])
 
   if(data.length === 0) {

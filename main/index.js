@@ -3,7 +3,6 @@ const {app, ipcMain} = require('electron')
 const prepareNext = require('electron-next')
 const {menuBar, onShow, onReady} = require('./menubar');
 const {writeToClipboard} = require('./clipboard')
-const Store = require('electron-store');
 const {store} = require('./store');
 
 // Prepare the renderer once the app is ready

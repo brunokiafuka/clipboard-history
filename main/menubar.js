@@ -52,7 +52,7 @@ const onShow = (store, mb) => () => {
     return mb.window.setSize(300, 30)
   } else {
     mb.window.setSize(300, 200)
-    return mb.window.webContents.send('message', data)
+    return mb.window.webContents.send('read-from-clipboard', data)
   }
 }
 
