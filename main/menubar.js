@@ -23,10 +23,10 @@ const menuBar = () => MENU_BAR({
   index: url,
   browserWindow: {
     width: APP_WIDTH,
-    // resizable: true,
+    resizable: false,
     transparent: true,
     webPreferences: {
-      nodeIntegration: false,
+      nodeIntegration: true,
       preload: join(__dirname, 'preload.js')
     }
   }

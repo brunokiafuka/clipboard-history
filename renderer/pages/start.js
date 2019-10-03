@@ -10,7 +10,7 @@ const App = () =>  {
     console.log({message})
     if(!message) return;
     if(data.includes(message)) return;
-    return setData([ ...message])
+    return setData(d => [ ...message])
   }, [])
 
   useEffect(() => {

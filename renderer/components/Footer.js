@@ -2,7 +2,7 @@ import {Element, Paragraph} from '.'
 
 export const Footer = () => {
   return (
-    <footer>
+    <>
       <Element onClick={() => global.ipcRenderer.send('clear')}>
         <Paragraph>
           Clear
@@ -13,6 +13,6 @@ export const Footer = () => {
           Exit
         </Paragraph>
       </Element>
-    </footer>
+    </>
   )
 }
