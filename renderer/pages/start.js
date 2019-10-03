@@ -1,23 +1,21 @@
 import { Fragment, useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
-
+// import {clipboard} from 'electron'
 
 const Container = styled.div`
   /* give the outermost container a predefined size */
-  position: absolute;
+  position: ${props => props.position || 'absolute'};
   top: 0;
   bottom: 0;
   left: 0;
   width: 300px;
-
+  user-select: none;
   display: flex;
   flex-direction: column;
-
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
   font-weight: normal;
-  width: 300px;
   color: white;
-  font-size: 15px;
+  font-size: 12px;
   margin: 0 auto;
   padding: 0;
   border: 0;
@@ -73,9 +71,9 @@ const PARAGRAPH = styled.p`
 
 const HR = styled.hr`
   display: block;
-  height: 2px;
+  height: 1px;
   border: 0;
-  border-top: 2px solid #909090;
+  border-top: 1px solid #909090;
   margin: 0.5em 0;
   padding: 0;
 `;
@@ -102,8 +100,10 @@ const App = () =>  {
 
 
   const handleMessage = useCallback((event, message) => {
+    console.log({message})
+    if(!message) return;
     if(data.includes(message)) return;
-    setData([ ...message])
+    return setData([ ...message])
   }, [])
 
   useEffect(() => {
@@ -113,14 +113,21 @@ const App = () =>  {
     return () => global.ipcRenderer.removeListener('message', handleMessage);
   }, [handleMessage])
 
-    if(!data) return <p>No content to show ...</p>
+  if(data.length === 0) {
+    return (
+      <Container position="fixed">
+        <PARAGRAPH>No content to show ...</PARAGRAPH>
+      </Container>
+    )
+  }
+
   return (
     <Container>
       <Section>
         <UL className="scrollable-content content">
           {data.map(i =>
             (
-              <LI>
+              <LI onClick={() => global.ipcRenderer.send('copy-to-clipboard', 'fuckkkkkk')}>
                 <Element>
                   <PARAGRAPH>{i}</PARAGRAPH>
                 </Element>
@@ -135,7 +142,7 @@ const App = () =>  {
           Clear
         </PARAGRAPH>
       </Element>
-      <Element>
+      <Element onClick={() => global.ipcRenderer.send('quit')}>
         <PARAGRAPH>
           Quit
         </PARAGRAPH>
