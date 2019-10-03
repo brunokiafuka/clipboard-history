@@ -24,9 +24,7 @@ const menuBar = () => MENU_BAR({
   browserWindow: {
     width: 300,
     resizable: false,
-    backgroundColor: '#1E1E1E',
-    opacity: '0.13',
-    darkTheme: true,
+    transparent: true,
     webPreferences: {
       nodeIntegration: false,
       preload: join(__dirname, 'preload.js')
@@ -49,8 +47,10 @@ const onShow = (store, mb) => () => {
   // mb.window.openDevTools()
   console.log({data, index})
   if (index === 0 || data.length === 0) {
+    mb.window.setVibrancy('ultra-dark')
     return mb.window.setSize(300, 30)
   } else {
+    mb.window.setVibrancy('dark')
     mb.window.setSize(300, 200)
     return mb.window.webContents.send('read-from-clipboard', data)
   }
