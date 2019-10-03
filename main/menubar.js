@@ -7,7 +7,7 @@ const isDev = require('electron-is-dev')
 const prepareNext = require('electron-next')
 const {clipboardWatcher} = require('./clipboard')
 const {menubar: MENU_BAR} = require('menubar');
-
+const {setWindowSizeAndVibrancy, APP_WIDTH} = require('../utils')
 
 const url = isDev ?
   'http://localhost:8000/start' :
@@ -22,8 +22,8 @@ const menuBar = () => MENU_BAR({
   icon: join(__dirname, 'assets/IconTemplate.png'),
   index: url,
   browserWindow: {
-    width: 300,
-    resizable: false,
+    width: APP_WIDTH,
+    // resizable: true,
     transparent: true,
     webPreferences: {
       nodeIntegration: false,
@@ -48,10 +48,9 @@ const onShow = (store, mb) => () => {
   console.log({data, index})
   if (index === 0 || data.length === 0) {
     mb.window.setVibrancy('ultra-dark')
-    return mb.window.setSize(300, 30)
+    return setWindowSizeAndVibrancy(mb.window, false, 0)
   } else {
-    mb.window.setVibrancy('dark')
-    mb.window.setSize(300, 200)
+    setWindowSizeAndVibrancy(mb.window, true, data.length)
     return mb.window.webContents.send('read-from-clipboard', data)
   }
 }

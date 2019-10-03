@@ -10,5 +10,5 @@ export const Paragraph = styled.p`
   max-lines: 1;
   text-overflow: ellipsis;
   text-align: left;
-  color:white;
+  color: ${props => props.color || 'white'};
 `;

@@ -23,7 +23,13 @@ const App = () =>  {
   if(data.length === 0) {
     return (
       <Container position="fixed">
-        <Paragraph>No content to show ...</Paragraph>
+        <Paragraph color="#636363">No content to show ...</Paragraph>
+        <Divider />
+        <Element onClick={() => global.ipcRenderer.send('quit')}>
+          <Paragraph>
+            Quit
+          </Paragraph>
+        </Element>
       </Container>
     )
   }
