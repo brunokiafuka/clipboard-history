@@ -6,12 +6,14 @@
   "scripts": {
     "start": "electron .",
     "build": "next build renderer && next export renderer",
-    "dist": "npm run build && electron-builder --dir",
+    "dist": "npm run build && npm run pack",
+    "pack": "electron-builder",
     "lint": "eslint renderer/**/*.js main/**/*.js",
     "lint:fix": "npm run lint -- --fix"
   },
   "build": {
     "asar": false,
+    "icon": "icon/app.ico",
     "extraResources": [
       {
         "from": "renderer/out",
