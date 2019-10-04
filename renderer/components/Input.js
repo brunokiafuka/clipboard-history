@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledInput = styled.input`
   height: 20px;
@@ -14,14 +14,14 @@ const StyledInput = styled.input`
   border-radius: 3px;
   border: none;
   align-self: center;
-`
+`;
 
-export const Input = ({onSearch}) => {
+export const Input = ({ onSearch }) => {
   return (
     <StyledInput
       type="text"
-      onChange={(e) => onSearch(e.target.value)}
-      placeholder='Search ...'
+      onChange={e => onSearch(e.target.value)}
+      placeholder="Search ..."
     />
-  )
-}
+  );
+};
