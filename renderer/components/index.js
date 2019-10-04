@@ -7,6 +7,7 @@ import {Divider} from './Divider'
 import {Section} from './Section'
 import {Footer} from './Footer'
 import {Order} from './Order'
+import {Input} from './Input'
 
 export {
   Container,
@@ -17,5 +18,6 @@ export {
   Divider,
   Section,
   Footer,
-  Order
+  Order,
+  Input
 }

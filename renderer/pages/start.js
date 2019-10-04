@@ -38,9 +38,7 @@ const App = () =>  {
 
   return (
     <Container>
-      <Section>
         <List data={data} />
-      </Section>
       <Footer />
     </Container>
   )
