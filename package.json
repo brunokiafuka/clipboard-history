@@ -6,7 +6,9 @@
   "scripts": {
     "start": "electron .",
     "build": "next build renderer && next export renderer",
-    "dist": "npm run build && electron-builder --dir"
+    "dist": "npm run build && electron-builder --dir",
+    "lint": "eslint renderer/**/*.js main/**/*.js",
+    "lint:fix": "npm run lint -- --fix"
   },
   "build": {
     "asar": false,
@@ -18,10 +20,21 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "babel-plugin-styled-components": "^1.10.6",
     "electron": "^6.0.2",
     "electron-builder": "^21.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
     "next": "latest",
+    "prettier": "^1.18.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },

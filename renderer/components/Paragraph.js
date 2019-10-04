@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Paragraph = styled.p`
   white-space: nowrap;
@@ -10,5 +10,5 @@ export const Paragraph = styled.p`
   max-lines: 1;
   text-overflow: ellipsis;
   text-align: left;
-  color: ${props => props.color || 'white'};
+  color: ${props => props.color || "white"};
 `;

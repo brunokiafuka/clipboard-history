@@ -18,7 +18,6 @@ const setWindowSizeAndVibrancy = (windowInstance, hasData, dataLength) => {
     }
     windowInstance.setVibrancy('dark')
     const appHeight = dataLength > 15 ? LINE_HEIGHT * 15 : (LINE_HEIGHT * dataLength) + PREFERENCES_HEIGHT
-    // const appHeight = dataLength > 15 ? LINE_HEIGHT * 15 : dataLength * LINE_HEIGHT;
     return setWindowSize(windowInstance, APP_WIDTH, appHeight)
 }
 
