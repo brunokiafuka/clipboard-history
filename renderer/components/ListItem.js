@@ -11,7 +11,7 @@ const LI = styled.li`
 
 export const ListItem = ({item}) => {
   return (
-    <LI onClick={() => global.ipcRenderer.send('copy-to-clipboard', item)}>
+    <LI key={item} onClick={() => global.ipcRenderer.send('copy-to-clipboard', item)}>
       <Element>
         <Paragraph>{item}</Paragraph>
       </Element>
