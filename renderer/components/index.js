@@ -6,6 +6,7 @@ import {ListItem} from './ListItem'
 import {Divider} from './Divider'
 import {Section} from './Section'
 import {Footer} from './Footer'
+import {Order} from './Order'
 
 export {
   Container,
@@ -15,5 +16,6 @@ export {
   ListItem,
   Divider,
   Section,
-  Footer
+  Footer,
+  Order
 }

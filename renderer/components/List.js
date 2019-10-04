@@ -2,13 +2,13 @@ import styled from 'styled-components'
 import {ListItem} from '.'
 
 const UL = styled.ul`
+  flex-grow: 1;
   list-style: none;
   margin: 0;
   padding: 0;
   border: 0;
-  flex-grow: 1;
+  height: 100%;
   overflow: auto;
-  /* for Firefox */
   min-height: 0;
 `;
 

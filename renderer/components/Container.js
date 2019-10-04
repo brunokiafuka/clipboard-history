@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  /* give the outermost container a predefined size */
   position: ${props => props.position || 'absolute'};
   top: 0;
   bottom: 0;
   left: 0;
-  width: 300px;
+  width: 100%;
+  height: 100%;
   user-select: none;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
   font-weight: normal;
   color: white;
