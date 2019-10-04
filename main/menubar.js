@@ -18,8 +18,8 @@ const url = isDev
 
 const menuBar = () =>
   MENU_BAR({
-    "node-integration": true,
     index: url,
+    icon: join(__dirname, "assets/icon.png"),
     browserWindow: {
       width: APP_WIDTH,
       resizable: false,
