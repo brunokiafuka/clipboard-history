@@ -27,7 +27,7 @@ export const List = ({ data }) => {
         newClips = currentClips.filter(i => {
           const item = i.toLowerCase();
           const filter = value.toLowerCase();
-          return item.includes(filter);
+          return item.indexOf(filter) > -1;
         });
       } else {
         newClips = data;

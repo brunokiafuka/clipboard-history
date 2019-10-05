@@ -1,5 +1,8 @@
 .DS_Store/
+main/.DS_Store
+renderer/.DS_Store
 node_modules/
 dist/
 renderer/.next/
 renderer/out/
+certificate.p12
