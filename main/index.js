@@ -11,15 +11,17 @@ const { store } = require("./store");
 // Prepare the renderer once the app is ready
 let mb;
 app.on("ready", async () => {
+  // Auto-update
+  autoUpdater.checkForUpdatesAndNotify();
+
+  // NextJS
   await prepareNext("./renderer");
+
   store.set("index", 0);
   mb = menuBar();
   mb.on("ready", onReady(store, mb));
   mb.on("show", onShow(store, mb));
 });
-
-// Auto-update
-autoUpdater.checkForUpdatesAndNotify();
 
 // Quit the app once all windows are closed
 app.on("window-all-closed", app.quit);
