@@ -6,10 +6,10 @@
 
 </div>
 
-> con made by Freepik from www.flaticon.com
+> Icon made by Freepik from www.flaticon.com
 
 
-Clipboard History is an Electron-based application that listen to every Copy/Paste command and saves it into its local storage. It saves up to 40 texts.
+Clipboard History is an Electron-based application that listen to every Copy/Paste command and saves it into its local storage. It saves up to 40 texts for now.
 
 Support:
 
@@ -17,7 +17,7 @@ Support:
 * Copying saved text, just click on it and voila.
 
 
-Cliboard History is built with Electron + NextJS & Styled-Components
+Clipboard History is built with Electron + NextJS & Styled-Components
 
 
 <div style="display:flex; flex-direction: row; justify-content: space-around">
