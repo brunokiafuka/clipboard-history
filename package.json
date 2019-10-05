@@ -1,7 +1,7 @@
 {
   "name": "clipboard-history",
   "productName": "Clipboard History",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main/index.js",
   "author": "Fausto K. <faustino.kialungila@gmail.com>",
   "scripts": {
