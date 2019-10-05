@@ -1,11 +1,12 @@
 // Packages
 const { app, ipcMain } = require("electron");
 const prepareNext = require("electron-next");
+const { autoUpdater } = require("electron-updater");
 const { menuBar, onShow, onReady } = require("./menubar");
 const { writeToClipboard } = require("./clipboard");
+const { openAboutWindow } = require("./windows/about");
 const { setWindowSize } = require("../utils");
 const { store } = require("./store");
-const { autoUpdater } = require("electron-updater");
 
 // Prepare the renderer once the app is ready
 let mb;
@@ -24,6 +25,7 @@ autoUpdater.checkForUpdatesAndNotify();
 app.on("window-all-closed", app.quit);
 
 ipcMain.on("copy-to-clipboard", (event, text) => writeToClipboard(text));
+ipcMain.on("open-about", (event, text) => openAboutWindow());
 ipcMain.on("clear", (event, _) => {
   store.clear();
   store.set("index", 0);

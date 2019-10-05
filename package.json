@@ -1,6 +1,6 @@
 {
   "name": "clipboard-history",
-  "productName": "Clipboard-History",
+  "productName": "Clipboard History",
   "version": "1.0.0",
   "main": "main/index.js",
   "author": "Fausto K. <faustino.kialungila@gmail.com>",
@@ -61,6 +61,7 @@
     "react-dom": "^16.8.4"
   },
   "dependencies": {
+    "about-window": "^1.13.1",
     "electron-clipboard-extended": "^1.1.1",
     "electron-is-dev": "^1.0.1",
     "electron-next": "^3.1.5",
