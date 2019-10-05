@@ -1,6 +1,6 @@
 
 <div style="display:flex; flex-direction: column; justify-content: center; align-items: center"">
-  <img src="main/assets/dock-icon.png" width="100px" height="100px" style="border-radius: 2px"/>
+  <img src=".github/assets/icon.png" width="100px" height="100px" style="border-radius: 2px"/>
 
 ### Clipboard History
 
