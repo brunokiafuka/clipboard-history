@@ -14,6 +14,9 @@ const StyledInput = styled.input`
   border-radius: 3px;
   border: none;
   align-self: center;
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Input = ({ onSearch }) => {
