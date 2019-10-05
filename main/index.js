@@ -13,7 +13,9 @@ let mb;
 app.on("ready", async () => {
   // Auto-update
   autoUpdater.checkForUpdatesAndNotify();
-
+  autoUpdater.on("update-downloaded", () => {
+    autoUpdater.quitAndInstall();
+  });
   // NextJS
   await prepareNext("./renderer");
 
