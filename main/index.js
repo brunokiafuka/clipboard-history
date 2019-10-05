@@ -5,6 +5,7 @@ const { menuBar, onShow, onReady } = require("./menubar");
 const { writeToClipboard } = require("./clipboard");
 const { setWindowSize } = require("../utils");
 const { store } = require("./store");
+const { autoUpdater } = require("electron-updater");
 
 // Prepare the renderer once the app is ready
 let mb;
@@ -16,7 +17,10 @@ app.on("ready", async () => {
   mb.on("show", onShow(store, mb));
 });
 
-// // Quit the app once all windows are closed
+// Auto-update
+autoUpdater.checkForUpdatesAndNotify();
+
+// Quit the app once all windows are closed
 app.on("window-all-closed", app.quit);
 
 ipcMain.on("copy-to-clipboard", (event, text) => writeToClipboard(text));

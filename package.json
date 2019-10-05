@@ -9,8 +9,13 @@
     "build": "next build renderer && next export renderer",
     "pack": "npm run build && electron-builder --dir",
     "dist": "npm run build && electron-builder",
+    "deploy": "npm run dist && electron-builder build --mac --win --publish always",
     "lint": "eslint renderer/**/*.js main/**/*.js utils/**/*.js",
     "lint:fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fausto95/clipboard-history.git"
   },
   "build": {
     "asar": false,
@@ -23,7 +28,18 @@
         "from": "renderer/out",
         "to": "app/renderer"
       }
-    ]
+    ],
+    "mac": {
+      "publish": [
+        "github"
+      ]
+    },
+    "win": {
+      "publisherName": "Faustino Kialungila",
+      "publish": [
+        "github"
+      ]
+    }
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -49,6 +65,7 @@
     "electron-is-dev": "^1.0.1",
     "electron-next": "^3.1.5",
     "electron-store": "^5.0.0",
+    "electron-updater": "^4.1.2",
     "menubar": "^6.0.8",
     "styled-components": "^4.4.0"
   }
