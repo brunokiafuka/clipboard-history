@@ -17,7 +17,7 @@ Support:
 * Copying saved text, just click on it and voila.
 
 
-Clipboard History is built with Electron + NextJS & Styled-Components
+Clipboard History is built using Electron + NextJS & Styled-Components
 
 
 <div style="display:flex; flex-direction: row; justify-content: space-around">
