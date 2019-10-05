@@ -3,17 +3,21 @@
   "productName": "Clipboard-History",
   "version": "1.0.0",
   "main": "main/index.js",
+  "author": "Fausto K. <faustino.kialungila@gmail.com>",
   "scripts": {
     "start": "electron .",
     "build": "next build renderer && next export renderer",
-    "dist": "npm run build && npm run pack",
-    "pack": "electron-builder",
-    "lint": "eslint renderer/**/*.js main/**/*.js",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "lint": "eslint renderer/**/*.js main/**/*.js utils/**/*.js",
     "lint:fix": "npm run lint -- --fix"
   },
   "build": {
     "asar": false,
-    "icon": "icon/app.ico",
+    "icon": "main/assets/dock-icon.png",
+    "appId": "com.electron.clipboard-history",
+    "productName": "Clipboard History",
+    "copyright": "Copyright © year Fausto K. <faustino.kialungila@gmail.com>",
     "extraResources": [
       {
         "from": "renderer/out",
