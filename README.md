@@ -1,4 +1,13 @@
+
+<div style="display:flex; flex-direction: column; justify-content: center; align-items: center"">
+  <img src="main/assets/dock-icon.png" width="100px" height="100px" style="border-radius: 2px"/>
+
 ### Clipboard History
+
+</div>
+
+> con made by Freepik from www.flaticon.com
+
 
 Clipboard History is an Electron-based application that listen to every Copy/Paste command and saves it into its local storage. It saves up to 40 texts.
 
