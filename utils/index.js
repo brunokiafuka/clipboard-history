@@ -1,6 +1,6 @@
 const APP_WIDTH = 300;
 const LINE_HEIGHT = 30;
-const PREFERENCES_HEIGHT = 110;
+const PREFERENCES_HEIGHT = 130;
 const DEFAULT_HEIGHT = LINE_HEIGHT + PREFERENCES_HEIGHT / 2;
 
 const setWindowSize = (

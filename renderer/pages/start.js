@@ -35,12 +35,7 @@ const App = () => {
         <Order order={1}>
           <Paragraph color="#636363">No content to show ...</Paragraph>
         </Order>
-        <Divider />
-        <Order order={99}>
-          <Element onClick={() => global.ipcRenderer.send("quit")}>
-            <Paragraph>Exit</Paragraph>
-          </Element>
-        </Order>
+        <Footer hasData={!data.length === 0} />
       </Container>
     );
   }
@@ -48,7 +43,7 @@ const App = () => {
   return (
     <Container>
       <List data={data} />
-      <Footer />
+      <Footer hasData={data.length !== 0} />
     </Container>
   );
 };

@@ -7,11 +7,16 @@ const Foot = styled.footer`
   order: 2;
 `;
 
-export const Footer = () => {
+export const Footer = ({ hasData }) => {
   return (
     <Foot>
-      <Element onClick={() => global.ipcRenderer.send("clear")}>
-        <Paragraph>Clear</Paragraph>
+      {hasData && (
+        <Element onClick={() => global.ipcRenderer.send("clear")}>
+          <Paragraph>Clear</Paragraph>
+        </Element>
+      )}
+      <Element onClick={() => global.ipcRenderer.send("open-about")}>
+        <Paragraph>About</Paragraph>
       </Element>
       <Element onClick={() => global.ipcRenderer.send("quit")}>
         <Paragraph>Exit</Paragraph>
