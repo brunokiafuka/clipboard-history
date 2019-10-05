@@ -32,19 +32,16 @@ const menuBar = () =>
   });
 
 const onReady = store => () => {
-  console.log("Menubar app is ready.");
   clipboardWatcher(store);
 };
 
 const onShow = (store, mb) => () => {
-  console.log("here showing");
   let data = [];
   const index = store.get("index");
   for (let i = 0; i <= index - 1; i++) {
     data.push(store.get(`currentText-${i}`));
   }
   // mb.window.openDevTools()
-  console.log({ data, index });
   if (index === 0 || data.length === 0) {
     mb.window.setVibrancy("ultra-dark");
     return setWindowSizeAndVibrancy(mb.window, false, 0);
